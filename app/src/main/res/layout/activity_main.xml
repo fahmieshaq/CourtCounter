@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- The relative layout includes two linear layouts and one reset button -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- This layout represents score control dashboard for team A and team B -->
     <LinearLayout
+        android:id="@+id/score_control_dashboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <!-- Team A dashboard -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -72,12 +76,14 @@
 
         </LinearLayout>
 
+        <!-- splitter -->
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:background="@android:color/darker_gray" />
 
+        <!-- Team B dashboard -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -142,15 +148,104 @@
 
     </LinearLayout>
 
+    <!-- This layout represents historic scores dashboard for team A and team B -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/score_control_dashboard"
+        android:orientation="vertical">
+
+        <!-- Old score labels -->
+        <LinearLayout
+            android:id="@+id/score_history_labels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/team_a_history_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:fontFamily="sans-serif-heavy"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Old Score"
+                android:textColor="@android:color/black"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/team_b_history_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:fontFamily="sans-serif-heavy"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Old Score"
+                android:textColor="@android:color/black"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <!-- Old score values -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/team_a_history_score"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="0"
+                android:textColor="@android:color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/team_b_history_score"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="0"
+                android:textColor="@android:color/black"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- This view represents a reset button -->
     <Button
         android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="24dp"
         android:onClick="reset"
         android:text="Reset" />
-</RelativeLayout>
 
-    <!--  -->
+</RelativeLayout>
