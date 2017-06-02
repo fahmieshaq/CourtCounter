@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // Team A
     public void addThreePointsForTeamA(View view) {
         teamAScore = teamAScore + THREE_POINTS;
         displayForTeamA(teamAScore);
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TEAM B
-
     public void addThreePointsForTeamB(View view) {
         teamBScore = teamBScore + THREE_POINTS;
         displayForTeamB(teamBScore);
@@ -48,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void addOnePointForTeamB(View view) {
         teamBScore = teamBScore + ONE_POINT;
+        displayForTeamB(teamBScore);
+    }
+
+    // Reset scores
+    public void reset(View view) {
+        teamAScore = 0;
+        teamBScore = 0;
+        displayForTeamA(teamAScore);
         displayForTeamB(teamBScore);
     }
 
